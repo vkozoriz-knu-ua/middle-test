@@ -5,7 +5,8 @@ PREFIX dbr: <http://dbpedia.org/resource/>
 SELECT ?name
 WHERE {
   ?university a dbo:University .
-  ?university dbp:name ?name
+  ?university dbp:name ?name .
+  FILTER (lang(?name) = "en") .
   ?university dbo:country dbr:Ukraine .
   ?university dbo:numberOfStudents ?numberOfStudents .
 }
