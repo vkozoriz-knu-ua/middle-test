@@ -1,0 +1,13 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?name
+WHERE {
+  ?university a dbo:University .
+  ?university dbp:name ?name
+  ?university dbo:country dbr:Ukraine .
+  ?university dbo:numberOfStudents ?numberOfStudents .
+}
+ORDER BY DESC(?numberOfStudents)
+LIMIT 1
